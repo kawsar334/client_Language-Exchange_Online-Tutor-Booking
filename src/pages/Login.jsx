@@ -65,7 +65,16 @@ function LoginPage() {
     }
 
     return (
-        <div className="w-full max-w-md mx-auto mt-16 p-8 bg-transparent   md:border  shadow-md rounded-lg">
+        <div className="w-full max-w-md mx-auto mt-16 p-8 bg-transparent   md:border  shadow-md rounded-lg"
+        
+            style={{
+                background: `url("https://i.pinimg.com/736x/d8/fb/71/d8fb71227a1a12446836e88712ad2b80.jpg")`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundRepeat: "no-repeat",
+                backdropFilter:"revert-layer"
+            }}
+        >
             <h2 className="text-2xl font-bold text-center mb-6">Login</h2>
             <form className="space-y-4" onSubmit={handleSubmit}>
                 <div>

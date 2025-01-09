@@ -59,7 +59,7 @@ const FAQ = () => {
     };
 
     return (
-        <section className=" py-12 my-[100px] px-4">
+        <section className=" py-12 my-[100px] px-4" id="faq">
             <h2 className={`${isDarkMode ? "text-3xl font-bold text-center text-white mb-8" : "text-3xl font-bold text-center text-gray-800 mb-8"}`}>Frequently Asked Questions</h2>
             <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
                 {faqs?.map((faq, index) => (

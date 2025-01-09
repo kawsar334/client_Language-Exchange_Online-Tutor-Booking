@@ -70,13 +70,14 @@ const UpdateTutorial = () => {
     };
 
     return (
-        <div className="h-max  flex items-center justify-center  ">
+        <div className="h-max  flex items-center justify-center   ">
          
-                <div className="my-[100px]  items-center justify-center ">
-                    <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+                <div className="my-[100px]  flex  items-center justify-center  w-full">
+                    <div className=" p-5 md:p-7 rounded-lg  shadow-lg w-full md:w-[600px] ">
                         <h2 className="text-2xl font-bold text-gray-800 mb-4">Update Tutorial</h2>
 
-                        <form onSubmit={handleSubmit} className="">
+                        <form onSubmit={handleSubmit} className=" ] w-full">
+                           <div className='flex flex-col md:flex-row gap-2 '>
                             <div>
                                 <label className="block text-gray-700">Name</label>
                                 <input
@@ -98,7 +99,12 @@ const UpdateTutorial = () => {
                                 />
                             </div>
 
-                            <div>
+                           </div>
+
+
+                        <div className='flex flex-col md:flex-row gap-2 '>
+
+                            <div className='w-full md:w-[50%]'>
                                 <label className="block text-gray-700">Image URL</label>
                                 <input
                                     type="text"
@@ -109,7 +115,7 @@ const UpdateTutorial = () => {
                                     className="w-full p-3 border bg-white text-[gray] rounded-lg"
                                 />
                             </div>
-                            <div>
+                            <div className='w-full md:w-[50%]'>
                                 <label className="block text-gray-700">Language</label>
                                 <select
                                     name="language"
@@ -130,6 +136,7 @@ const UpdateTutorial = () => {
                                     <option value="China">China</option>
                                 </select>
                             </div>
+                        </div>
                             <div>
                                 <label className="block text-gray-700">Price</label>
                                 <input
@@ -166,7 +173,7 @@ const UpdateTutorial = () => {
                                 />
                             </div>
 
-                            <div className="flex justify-end space-x-4">
+                            <div className="flex justify-end space-x-4 my-5">
                                 <button
                                     type="button"
                                     className="px-6 py-3 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 transition duration-200"

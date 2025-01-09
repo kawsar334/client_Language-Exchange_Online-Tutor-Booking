@@ -124,13 +124,13 @@ const MyTutorials = () => {
                                     className="px-2 py-1 bg-red-500 text-white rounded-lg hover:bg-red-600"
                                     onClick={() => handleDelete(tutorial?._id)}
                                 >
-                                    Delete
+                                    <i className="fas fa-trash delete-icon" title="Delete"></i>
                                 </button>
                                 <Link onClick={()=>handleRedirect(tutorial)} >
                                     <button
                                         className=" px-2 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
                                     >
-                                        Update
+                                        <i className="fas fa-pen edit-icon" title="Update"></i>
                                     </button>
                                 </Link>
                             </td>

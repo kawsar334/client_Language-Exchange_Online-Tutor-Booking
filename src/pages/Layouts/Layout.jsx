@@ -8,15 +8,24 @@ import CartContext from '../../context/CartStorage';
 import { ThemeContext } from '../../ThemeProvider';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Nav2 from '../../components/Nav2';
 const Layout = () => {
     const {cartData,} = CartContext()
     const { isDarkMode, toggleTheme } = useContext(ThemeContext);
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            duration: 1500, 
+            easing: "ease-in-out", 
+            once: true, 
+        });
     }, []);
+    const path = useLocation().pathname
+   
     return (
         <div className={isDarkMode ? "bg-mn text-white" : "bg-white text-mn"}>
+
             <Navbar cartData={cartData}/>
+           {path === "/" && <Nav2/>}
             <Outlet />
             <Footer />
         </div>

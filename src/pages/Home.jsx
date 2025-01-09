@@ -15,6 +15,7 @@ import useFetch from '../data/UseFetch';
 import { toast } from 'react-toastify';
 import TutorComponent from '../components/TutorsComponent';
 import Spiner from '../components/Spiner';
+import Services from '../components/Services';
 
 
 const Home = () => {
@@ -43,12 +44,12 @@ const Home = () => {
         <div className="min-h-screen flex flex-col">
             <Hero  uniqueTutor={uniqueTutor}/>
             <Stats LanguagesOffered={categories?.length} />
-            {/* <Products /> */}
             <LanguageCategory categories={categories}/>
             <TutorComponent uniqueTutor={uniqueTutor}/>
+            <Services/>
             <FAQ />
             <Testimonials />
-            {/* <ReviewsSection /> */}
+            <ReviewsSection />
             {/* <About /> */}
         </div>
     );

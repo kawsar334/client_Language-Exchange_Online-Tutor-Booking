@@ -11,7 +11,8 @@ export default {
         bl: '#febd18',  
         bgcolor:'#161b1d',
         mn:"#161c2d",
-        tc:"#d35400"
+        tc:"#d35400",
+        teal:"#5bd9b3"
            
       }
     },

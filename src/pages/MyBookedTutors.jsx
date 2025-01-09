@@ -66,35 +66,38 @@ if(loading){
             className='w-full h-screen flex justify-center items-center '>
                 <h1 className='text-3xl text-[crimson] font-semibold'>Empty Booked List</h1>
             </div> :<div className="py-10 bg-transparent">
-            <div className="max-w-6xl mx-auto bg- shadow-xl rounded-lg p-6">
+            <div className="max-w-6xl mx-auto  rounded-lg p-6">
                 <h2 className="text-3xl font-bold text-center text-[gray] mb-6">
-                            <span className='text-[crimson]'>{user?.displayName}</span> You Booked <span className='text-[crimson]'>{bookedTutors?.length}</span> Tutors
+                        You Booked <span className='text-teal'>({bookedTutors?.length})</span> Tutors
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {bookedTutors?.map((tutor) => (
+                    {bookedTutors?.map((tutor,index) => (
                         <div
-                            data-aos="fade-up"
+                            data-aos={`${index % 2 === 0 ? "fade-up" : "fade-down"}`}
                             key={tutor?.id}
-                            className=" p-6 rounded-lg border shadow-lg transition duration-200 hover:shadow-2xl"
+                            className="  rounded-lg border  transition duration-200 hover:shadow-2xl"
                         >
-                            <div className="text-center">
+                            <div className="">
                                 <img
-                                    data-aos="fade-down"
+                                    
                                     src={tutor?.image}
                                     alt={tutor?.name}
-                                    className="w-32 h-32 object-cover rounded-full mx-auto mb-4"
+                                    className="w-full h-[200px] object-cover mx-auto mb-4"
                                 />
-                                <h3 className="text-xl font-semibold text-red-800" data-aos="fade-up">{tutor?.name}</h3>
-                                <p className="text-gray-600" data-aos="fade-up">Language: {tutor?.language}</p>
-                                <p className="text-gray-600" data-aos="fade-up">Price: {tutor?.price}</p>
-                                <p className="text-gray-600" data-aos="fade-up">Rating: {tutor?.review !== undefined && tutor?.review !== null ? tutor?.review : "Not found"} ★</p>
+                                <div className=' p-6'>
+
+                                <h3 className="text-xl font-semibold first-letter:text-red-800 " data-aos="fade-up">{tutor?.name}</h3>
+                                    <p className="text-gray-600" data-aos="fade-up"><span className='text-teal'>{tutor?.language}</span></p>
+                                <p className="text-gray-600 border w-max px-3  my-2  rounded-full " >${tutor?.price}</p>
+                                    <p className="text-red-800" >{tutor?.review !== undefined && tutor?.review !== null ? tutor?.review : "Not found"} ★</p>
+                                </div>
 
                                 <div>
 
                                 
                                 </div>
                                 <button
-                                    className="mt-4 px-6 py-2 rounded-full text-white bg-blue-500 hover:bg-blue-600 transition duration-200"
+                                    className="my-4  ml-6 px-6 py-2 rounded-full text-mn bg-teal hover:bg-bgcolor hover:text-teal transition duration-500"
                                     onClick={()=>handleReview(tutor)}
                                 >
                                     Review

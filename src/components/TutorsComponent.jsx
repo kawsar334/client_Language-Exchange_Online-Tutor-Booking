@@ -8,37 +8,42 @@ const TutorComponent = ({ uniqueTutor }) => {
 
     const navigate = useNavigate();
 
-    const handleRedirect=(item)=>{
+    const handleRedirect = (item) => {
         navigate(`/find-tutors/${item?.language}`)
     }
 
     return (
-        <div className="p-6 my-[100px]">
+        <div className="p-6 my-[100px] w-full">
             <h1 className="text-2xl font-bold mb-6 text-center">Our Tutors category</h1>
-                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-4 w-full  mx-auto ">
-                    
-                {uniqueTutor?.map((tutor) => (<div className="border rounded-lg p-2 shadow-lg flex justify-between items-center">
-                            <img
-                                src={tutor.image}
-                                alt={tutor.name}
-                                className="w-32 h-[100px] object-cover rounded-md mb-4"
-                        data-aos="fade-up"
-                            />
-                           <div className="">
-                        <h2 className="text-xl font-semibold">{tutor?.name}</h2>
-                        {tutor?.review >5 &&<p className="text-pink-300">Senior </p>}
-                        <p data-aos="fade-down" className="text-gray-600">Language: {tutor?.language}</p>
-                        <p data-aos="fade-up" className="text-gray-600">Price:{tutor?.price}</p>
-                        <p data-aos="fade-down" className="text-gray-600">Reviews: {tutor?.review}★</p>
-                        <button className="mt-4 bg-pink-500 text-white px-4 py-2 rounded-lg" onClick={() => handleRedirect(tutor)}>
-                            Book Trial Lesson
-                        </button>
-                           </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full md:w-[90%] lg:w-[90%]  mx-auto  ">
+
+                {uniqueTutor?.map((tutor,index) => (
+                    <div className="border rounded-lg  shadow-lg flex justify-between items-center flex-col" data-aos={`${index % 2 === 0 ? "fade-up" : "fade-down"}`}>
+                        <img
+                            src={tutor.image}
+                            alt={tutor.name}
+                            className="w-full h-[250px] object-cover  mb-4"
+                            
+                        />
+                        <div className=" w-full">
+                          <div className="p-2">
+                                <h2 className="text-xl  "><span >Tutor</span> <span className="text-teal">{tutor?.name}</span></h2>
+                                {tutor?.review > 5 && <p className="text-pink-300">Senior </p>}
+                                <p  className="text-gray-600"><span className="text-red-400">{tutor?.language} </span></p>
+                          </div>
+                          <div className="flex justify-start items-center gap-4 px-2">
+                                <p  className="text-white bg-teal w-max rounded-full px-3">${tutor?.price}</p>
+                                <p className="text-red-400 w-max "> {tutor?.review}★★★</p>
+                          </div>
+                            <button className="mt-4  border w-full text-teal px-4 py-2 " onClick={() => handleRedirect(tutor)}>
+                                Book Trial Lesson
+                            </button>
                         </div>
+                    </div>
                 ))
                 }
-                </div>
-            
+            </div>
+
         </div>
     );
 };

@@ -12,7 +12,7 @@ const AddTutorial = () => {
     const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         name: user?.displayName,
-        email:user?.email,
+        email: user?.email,
         image: '',
         language: '',
         price: '',
@@ -29,8 +29,8 @@ const AddTutorial = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const { name,email,image,language,price,description,  review} = formData
-     
+        const { name, email, image, language, price, description, review } = formData
+
         try {
 
             setLoading(true)
@@ -39,17 +39,17 @@ const AddTutorial = () => {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ name, email, tutorImage: user?.photoURL, image, language, price, description, review, createdAt: new Date().toISOString() }),  
+                body: JSON.stringify({ name, email, tutorImage: user?.photoURL, image, language, price, description, review, createdAt: new Date().toISOString() }),
             });
 
             if (!response.ok) {
                 throw new Error('Failed to submit data');
             }
             const result = await response.json();
-            toast.success( result?.message);
+            toast.success(result?.message);
             setTimeout(() => {
                 setLoading(false)
-                navigate("/") 
+                navigate("/")
             }, 8000);
         } catch (err) {
             setLoading(true)
@@ -57,88 +57,120 @@ const AddTutorial = () => {
         }
     };
 
-    if(loading){
-        return <Spiner/>
+    if (loading) {
+        return <Spiner />
     }
     return (
-        <div className="min-h-screen flex items-center justify-center  py-12">
+        <div className="min-h-screen flex items-center justify-center  py-12 bg-mn "
+
+            style={{
+                background: `url("https://i.pinimg.com/736x/d8/fb/71/d8fb71227a1a12446836e88712ad2b80.jpg")`,
+                backgroundSize: "cover",
+                backgroundAttachment: "fixed",
+                backgroundRepeat: "no-repeat"
+            }}
+        >
             <div className="max-w-lg w-full bg-white px-5 py-3 rounded-lg shadow-lg">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Add a New Tutorial</h2>
 
                 <form onSubmit={handleSubmit} className="space-y-2">
                     {/* Name Field */}
-                    <div>
-                        <label className="block text-gray-700">Name</label>
-                        <input
-                            required
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your name"
-                        />
+
+
+                    <div className='flex  justify-center items-center gap-2 w-full  flex-col md:flex-row '>
+                        <div className='w-full md:w-1/2 '>
+                            <label className="block text-gray-700">Name</label>
+                            <input
+                                required
+                                type="text"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
+                                className="w-full p-3 border-b border-b-teal bg-transparent text-[gray]  focus:outline-none focus:ring-1 focus:ring-bgcolor"
+                                placeholder="Enter your name"
+                            />
+                        </div>
+
+                        {/* Email Field */}
+                        <div className='w-full md:w-1/2 '>
+                            <label className="block text-gray-700">Email</label>
+                            <input
+                                required
+                                type="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
+                                className="w-full p-3 border-b border-b-teal bg-transparent text-[gray]  focus:outline-none focus:ring-1 focus:ring-bgcolor"
+                                placeholder="Enter your email"
+                            />
+                        </div>
                     </div>
 
-                    {/* Email Field */}
-                    <div>
-                        <label className="block text-gray-700">Email</label>
-                        <input
-                            required
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter your email"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-gray-700">Image URL</label>
-                        <input
-                            required
-                            type="text"
-                            name="image"
-                            value={formData.image}
-                            onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter image URL"
-                        />
-                    </div>
-                    <div>
-                        <label className="block text-gray-700">Language</label>
-                        <select
-                            name="language"
-                            value={formData.language}
-                            required 
-                            onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                        >
-                            <option value="">Select Language</option>
-                            <option value="English">English</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="French">French</option>
-                            <option value="Bengali">Bengali</option>
-                            <option value="Hindi">Hindi</option>
-                            <option value="Arabic">Arabic</option>
-                            <option value="Urdu">Urdu</option>
-                            <option value="Tamil">Tamil</option>
-                            <option value="China">China</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label className="block text-gray-700">Price</label>
-                        <input
-                            required
-                            type="number"
-                            name="price"
-                            value={formData.price}
-                            onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            placeholder="Enter price per hour"
-                        />
+                    <div className='flex  justify-center items-center gap-2 w-full  flex-col md:flex-row'>
+
+                        <div className='w-full'>
+                            <label className="block text-gray-700">Image URL</label>
+                            <input
+                                required
+                                type="text"
+                                name="image"
+                                value={formData.image}
+                                onChange={handleChange}
+                                className="w-full p-3 border-b border-b-teal bg-transparent text-[gray]  focus:outline-none focus:ring-1 focus:ring-bgcolor"
+                                placeholder="Enter image URL"
+                            />
+                        </div>
+                        <div className='w-full'>
+                            <label className="block text-gray-700">Language</label>
+                            <select
+                                name="language"
+                                value={formData.language}
+                                required
+                                onChange={handleChange}
+                                className="w-full p-3 border-b border-b-teal bg-transparent text-[gray]  focus:outline-none focus:ring-1 focus:ring-bgcolor"
+                            >
+                                <option value="">Select Language</option>
+                                <option value="English">English</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="French">French</option>
+                                <option value="Bengali">Bengali</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Arabic">Arabic</option>
+                                <option value="Urdu">Urdu</option>
+                                <option value="Tamil">Tamil</option>
+                                <option value="China">China</option>
+                            </select>
+                        </div>
                     </div>
 
+                    <div className='flex  justify-center items-center gap-2'>
+
+                        <div>
+                            <label className="block text-gray-700">Price</label>
+                            <input
+                                required
+                                type="number"
+                                name="price"
+                                value={formData.price}
+                                onChange={handleChange}
+                                className="w-full p-3 border-b border-b-teal bg-transparent text-[gray]  focus:outline-none focus:ring-1 focus:ring-bgcolor"
+                                placeholder="Enter price per hour"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-gray-700">Review</label>
+                            <input
+                                required
+                                type="number"
+                                name="review"
+                                value={formData.review}
+                                readOnly
+                                className="w-full p-3 border-b border-b-teal bg-transparent text-[gray]  bg-gray-100"
+                                placeholder="Review (0 by default)"
+                            />
+                        </div>
+                    </div>
                     {/* Description Field */}
                     <div>
                         <label className="block text-gray-700">Description</label>
@@ -146,7 +178,7 @@ const AddTutorial = () => {
                             name="description"
                             value={formData.description}
                             onChange={handleChange}
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full p-3 border border-teal bg-transparent text-[gray] rounded-lg focus:outline-none focus:ring-1 focus:ring-bgcolor"
                             rows="4"
                             placeholder="Enter tutorial description"
                         />
@@ -158,8 +190,8 @@ const AddTutorial = () => {
                             type="number"
                             name="review"
                             value={formData.review}
-                           readOnly
-                            className="w-full p-3 border border-gray-300 bg-transparent text-[gray] rounded-lg bg-gray-100"
+                            readOnly
+                            className="w-full p-3 border border-teal bg-transparent text-[gray]  rounded-lg bg-gray-100"
                             placeholder="Review (0 by default)"
                         />
                     </div>
@@ -167,7 +199,7 @@ const AddTutorial = () => {
                         <button
                             required
                             type="submit"
-                            className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200"
+                            className="px-6 py-3 bg-teal text-white rounded-lg hover:bg-white hover:text-teal hover:border transition duration-200"
                         >
                             Submit Tutorial
                         </button>

@@ -8,19 +8,19 @@ const Testimonials = () => {
             id: 1,
             name: "Ali Reza",
             feedback: "This platform helped me connect with amazing tutors. The user interface is so easy to use!",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ZdkWloBQS7DXKGDZ-F9IuIp-uFVF7F18Vg&s",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe_ys7H5iGkuOPLwBIjnjqRVg6Ga_q91bjWA&s",
         },
         {
             id: 2,
-            name: "Sara Khan",
+            name: "Firoz khan",
             feedback: "I found the perfect tutor for learning French. Highly recommended!",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5TlVx7SebsbHcRPmjypiKNXhV0Jtxx0Muyw&s",
+            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO6cNkiJMNHtX6b6ZFFp5c6_sA2icz4o5UNQ&s",
         },
         {
             id: 3,
             name: "Mohammad Rizwan",
             feedback: "A fantastic experience! The tutors are professional and the platform is very reliable.",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDu9TCVKcnIbjtAlWtn5YsoJYHRs1DkIInBQ&s",
+            image: "https://files.trackie.com/uploads/admin/2024-07-16-15-43-12.jpg",
         },
     ];
 

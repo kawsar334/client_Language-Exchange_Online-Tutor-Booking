@@ -27,27 +27,27 @@ const Navbar = () => {
           <i className="fa-solid fa-xmark"></i>
         </button>
       </li>
-      <li className={`${isDarkMode ? "text-white" : "text-mn"}`}>
+      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/">Home</Link>
       </li>
-      <li className={`${isDarkMode ? "text-white" : "text-mn"}`}>
+      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/find-tutors">Find Tutors</Link>
       </li>
-      <li className={`${isDarkMode ? "text-white" : "text-mn"}`}>
+      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/add-tutorials">Add Tutorials</Link>
       </li>
-      <li className={`${isDarkMode ? "text-white" : "text-mn"}`}>
+      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/my-tutorials">My Tutorials</Link>
       </li>
-      <li className={`${isDarkMode ? "text-white" : "text-mn"}`}>
+      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/my-booked-tutors">My Booked Tutors</Link>
       </li>
-      {user?<li onClick={signOutUser} className={`${isDarkMode ? "text-white md:hidden" : "text-mn md:hidden"}`}>
+      {user?<li onClick={signOutUser} className={`rounded-full mx-1 ${isDarkMode ? "text-white md:hidden" : "text-teal md:hidden"}`}>
         <Link to="#">Logout</Link>
-      </li> : <li  className={`${isDarkMode ? "text-white md:hidden" : "text-mn md:hidden"}`}>
+      </li> : <li  className={`rounded-full mx-1 ${isDarkMode ? "text-white md:hidden" : "text-mn md:hidden"}`}>
         <Link to="/login">Login</Link>
       </li>}
-     {user&& <li  className={`${isDarkMode ? "text-white md:hidden" : "text-mn md:hidden"}`}>
+     {user&& <li  className={`rounded-full mx-1 ${isDarkMode ? "text-white md:hidden" : "text-mn md:hidden"}`}>
     <div className='flex justify-start items-start'>
           <img
             src={user?.photoURL || "https://via.placeholder.com/40"}
@@ -63,11 +63,12 @@ const Navbar = () => {
   return (
     <div className="navbar bg-base-100 sticky top-0 left-0 z-50 shadow-md px-5 " >
       <div className="navbar-start" >
-        <Link to="/" className="text-xl font-bold text-primary" >
-          LanguageExch
+        <Link to="/" className="text-xl font-bold text-teal" >
+          <span className='mr-2'> <i className="fa-solid fa-earth-asia text-xl"></i></span>
+          Language <span className='text-mn'>Exchange</span>
         </Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-center hidden lg:flex gap-3">
         <ul
           className={`${isDarkMode
               ? "text-white menu menu-horizontal px-1 flex flex-col md:flex-row"

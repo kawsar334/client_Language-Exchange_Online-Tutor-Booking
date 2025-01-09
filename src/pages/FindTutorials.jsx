@@ -43,7 +43,7 @@ const FindTutorials = () => {
                     <p><b>Price:</b>${tutor.price}</p>
 
                     <p>{tutor.details}</p>
-                    <Link to={`/tutor/${tutor.email}`} className='border py-1 px-5  rounded-[5px]'>View Details</Link>
+                    <Link to={`/tutor/${tutor.email}`} className='border py-1 px-5  rounded-[5px] bg-teal'>View Details</Link>
                 </div>
             ))}
             </div>
