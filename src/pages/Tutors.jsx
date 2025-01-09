@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Spiner from "../components/Spiner";
 import { ThemeContext } from "../ThemeProvider";
+import Title from "../components/Title";
 
 const Tutors = () => {
     const navigate = useNavigate();
@@ -52,7 +53,7 @@ const Tutors = () => {
     return (
         <>
             <div className="flex justify-center w-full md:w-[80%]  m-auto items-center gap-2 flex-col md:flex-row  my-10">
-                <h2 className="text-3xl font-bold text-center mb-8 ">Find  Tutors</h2>
+                <Title title="Find Tutors"/>
                 <input
                     type="text"
                     className="border px-4 py-2 mb-6 focus:outline-none  rounded"

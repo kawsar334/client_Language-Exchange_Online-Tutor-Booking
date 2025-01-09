@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Spiner from '../components/Spiner';
 import { ThemeContext } from '../ThemeProvider';
+import Title from '../components/Title';
 
 const AddTutorial = () => {
     const { isDarkMode } = useContext(ThemeContext)
@@ -71,7 +72,8 @@ const AddTutorial = () => {
             }}
         >
             <div className="max-w-lg w-full bg-white px-5 py-3 rounded-lg shadow-lg">
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">Add a New Tutorial</h2>
+                <h2 className="text-3xl font-bold text-center text-gray-800 mb-6"></h2>
+                <Title title="Add a New Tutorial"/>
 
                 <form onSubmit={handleSubmit} className="space-y-2">
                     {/* Name Field */}

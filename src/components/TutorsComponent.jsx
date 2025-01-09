@@ -1,6 +1,7 @@
 
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import Title from "./Title";
 
 
 const TutorComponent = ({ uniqueTutor }) => {
@@ -14,8 +15,8 @@ const TutorComponent = ({ uniqueTutor }) => {
 
     return (
         <div className="p-6 my-[100px] w-full">
-            <h1 className="text-2xl font-bold mb-6 text-center">Our Tutors category</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full md:w-[90%] lg:w-[90%]  mx-auto  ">
+            <Title title="Our Tutors category"/>
+            <div className="my-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full md:w-[90%] lg:w-[90%]  mx-auto  ">
 
                 {uniqueTutor?.map((tutor,index) => (
                     <div className="border rounded-lg  shadow-lg flex justify-between items-center flex-col" data-aos={`${index % 2 === 0 ? "fade-up" : "fade-down"}`}>

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import useFetch from "../data/UseFetch";
 import { ThemeContext } from "../ThemeProvider";
+import Title from "./Title";
 
 const Stats = ({ LanguagesOffered }) => {
 
@@ -28,7 +29,7 @@ const Stats = ({ LanguagesOffered }) => {
     return (
         <div className={`my-10 w-[90%] m-auto ${isDarkMode ? "bg-transparent py-12" : " py-12"}`}>
             <div className="container mx-auto text-center ">
-                <h2 className="text-3xl font-bold mb-8">Our Statistics</h2>
+                <Title title="Our Statistics"/>
                 <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-4 gap-2 w-[80%] md:w-full mx-auto">
                     {statsData.map((stat,index) => (
                         <div

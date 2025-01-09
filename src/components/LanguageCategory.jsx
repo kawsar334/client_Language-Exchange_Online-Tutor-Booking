@@ -10,6 +10,7 @@ import img3 from "../assets/3.png";
 import img4 from "../assets/4.png";
 import img5 from "../assets/5.png";
 import img6 from "../assets/6.png";
+import Title from "./Title";
 const LanguageCategory = ({ categories }) => {
 
     const images = [img1, img2, img3, img4, img5, img6].reverse();
@@ -17,8 +18,9 @@ const LanguageCategory = ({ categories }) => {
     const { isDarkMode } = useContext(ThemeContext)
     const navigate = useNavigate();
     return (
-        <div id="category" data-aos="fade-up" className={`${isDarkMode ? "py-10 text-tc   w-full md:w-[90%] m-auto  my-[100px] " : "py-10  w-full md:w-[90%] m-auto  my-[100px] "}`}>
-            <h2 className="text-3xl font-bold text-center mb-8">Language Categories</h2>
+        <div id="category" data-aos="fade-up" className={`${isDarkMode ? "py-5 text-tc   w-full md:w-[90%] m-auto  my-[100px] " : "py-10  w-full md:w-[90%] m-auto  my-[100px] "}`}>
+            {/* <h2 className="text-3xl font-bold text-center mb-8">Language Categories</h2> */}
+            <Title title="Language Categories"/>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-4  gap-4 px-4">
                 {categories?.slice(0,6).map((category,index) => (                   
                     <div

@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { toast } from 'react-toastify';
 import Spiner from '../components/Spiner';
 import { ThemeContext } from '../ThemeProvider';
+import Title from '../components/Title';
 
 const MyTutorials = () => {
     const [tutorials, setTutorials] = useState([]);
@@ -94,7 +95,7 @@ const MyTutorials = () => {
         <>
             {data?.data?.length == 0 ?( <div className='w-full h-screen flex justify-center items-center'><h1 className='text-3xl font-semibold '>Empty data List</h1></div>)
             : <div className="min-h-screen p-3  ">
-            <h2 className="text-3xl font-bold text-center text-[gray] mb-8">My Tutorials</h2>
+                    <Title title="My Tutorials"/>
             <div className="w-full md:w-[90%]   m-auto overflow-x-auto">
             <table className="w-full table-auto  rounded-lg shadow-lg">
                         <thead className={`${isDarkMode ? "bg-white text-tc" : "bg-gray-200"}`}>
