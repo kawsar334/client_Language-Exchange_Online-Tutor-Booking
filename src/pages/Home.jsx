@@ -24,7 +24,7 @@ const Home = () => {
 
     const { data, loading, error } = useFetch(`https://server-wheat-xi.vercel.app/allproducts`);
     const [uniqueTutor, setUniqueTutor] = useState([])
-   console.log(data)
+
 
     useEffect(() => {
         if (data?.data) {

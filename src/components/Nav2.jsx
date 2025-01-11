@@ -47,10 +47,7 @@ const Nav2 = () => {
                       </a>
                   </div>
               </nav>
-              <div className='flex justify-between items-center gap-2 '>
-                <a href="#" className='border-r px-2 '>Register</a>
-                <a href="#">Login</a>
-              </div>
+            
 
         </div>
     </div>

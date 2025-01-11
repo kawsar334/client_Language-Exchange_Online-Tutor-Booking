@@ -9,8 +9,10 @@ import { ThemeContext } from '../../ThemeProvider';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Nav2 from '../../components/Nav2';
+import { AuthContext } from '../../context/AuthProviders';
 const Layout = () => {
     const {cartData,} = CartContext()
+      const { user, signOutUser } = useContext(AuthContext);
     const { isDarkMode, toggleTheme } = useContext(ThemeContext);
     useEffect(() => {
         AOS.init({
@@ -25,7 +27,7 @@ const Layout = () => {
         <div className={isDarkMode ? "bg-mn text-white" : "bg-white text-mn"}>
 
             <Navbar cartData={cartData}/>
-           {path === "/" && <Nav2/>}
+           {path === "/" && !user &&<Nav2/>}
             <Outlet />
             <Footer />
         </div>

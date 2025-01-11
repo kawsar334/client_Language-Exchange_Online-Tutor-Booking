@@ -33,15 +33,15 @@ const Navbar = () => {
       <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/find-tutors">Find Tutors</Link>
       </li>
-      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
+      {user &&<li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/add-tutorials">Add Tutorials</Link>
-      </li>
-      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
+      </li>}
+     { user &&<li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/my-tutorials">My Tutorials</Link>
-      </li>
-      <li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
+      </li>}
+      {user &&<li className={`rounded-full mx-1 ${isDarkMode ? "text-teal" : "text-teal"}`}>
         <Link to="/my-booked-tutors">My Booked Tutors</Link>
-      </li>
+      </li>}
       {user?<li onClick={signOutUser} className={`rounded-full mx-1 ${isDarkMode ? "text-white md:hidden" : "text-teal md:hidden"}`}>
         <Link to="#">Logout</Link>
       </li> : <li  className={`rounded-full mx-1 ${isDarkMode ? "text-white md:hidden" : "text-mn md:hidden"}`}>
